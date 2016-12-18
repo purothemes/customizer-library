@@ -20,7 +20,7 @@ The Customizer Library includes additional classes and helper functions for crea
 
 The [Customizer Library](https://github.com/devinsays/customizer-library) can be included in your own projects git submodule if you'd like to be able to pull down changes.  To include it in your own projects the same way, navigate to the directory and use:
 
-`git submodule add git@github.com:devinsays/customizer-library customizer-library`
+`git submodule add git@github.com:purothemes/customizer-library.git inc/customizer-library`
 
 ## Options
 
