@@ -122,16 +122,16 @@ if ( ! function_exists( 'customizer_library_get_google_font_subsets' ) ) :
  */
 function customizer_library_get_google_font_subsets() {
 	return array(
-		'all'          => __( 'All', 'textdomain' ),
-		'cyrillic'     => __( 'Cyrillic', 'textdomain' ),
-		'cyrillic-ext' => __( 'Cyrillic Extended', 'textdomain' ),
-		'devanagari'   => __( 'Devanagari', 'textdomain' ),
-		'greek'        => __( 'Greek', 'textdomain' ),
-		'greek-ext'    => __( 'Greek Extended', 'textdomain' ),
-		'khmer'        => __( 'Khmer', 'textdomain' ),
-		'latin'        => __( 'Latin', 'textdomain' ),
-		'latin-ext'    => __( 'Latin Extended', 'textdomain' ),
-		'vietnamese'   => __( 'Vietnamese', 'textdomain' ),
+		'all'          => __( 'All', 'customizer-library' ),
+		'cyrillic'     => __( 'Cyrillic', 'customizer-library' ),
+		'cyrillic-ext' => __( 'Cyrillic Extended', 'customizer-library' ),
+		'devanagari'   => __( 'Devanagari', 'customizer-library' ),
+		'greek'        => __( 'Greek', 'customizer-library' ),
+		'greek-ext'    => __( 'Greek Extended', 'customizer-library' ),
+		'khmer'        => __( 'Khmer', 'customizer-library' ),
+		'latin'        => __( 'Latin', 'customizer-library' ),
+		'latin-ext'    => __( 'Latin Extended', 'customizer-library' ),
+		'vietnamese'   => __( 'Vietnamese', 'customizer-library' ),
 	);
 }
 endif;
@@ -191,15 +191,15 @@ if ( ! function_exists( 'customizer_library_get_standard_fonts' ) ) :
 function customizer_library_get_standard_fonts() {
 	return array(
 		'serif' => array(
-			'label' => _x( 'Serif', 'font style', 'textdomain' ),
+			'label' => _x( 'Serif', 'font style', 'customizer-library' ),
 			'stack' => 'Georgia,Times,"Times New Roman",serif'
 		),
 		'sans-serif' => array(
-			'label' => _x( 'Sans Serif', 'font style', 'textdomain' ),
+			'label' => _x( 'Sans Serif', 'font style', 'customizer-library' ),
 			'stack' => '"Helvetica Neue",Helvetica,Arial,sans-serif'
 		),
 		'monospace' => array(
-			'label' => _x( 'Monospaced', 'font style', 'textdomain' ),
+			'label' => _x( 'Monospaced', 'font style', 'customizer-library' ),
 			'stack' => 'Monaco,"Lucida Sans Typewriter","Lucida Typewriter","Courier New",Courier,monospace'
 		)
 	);
