@@ -98,6 +98,7 @@ if ( ! function_exists( 'customizer_library_register' ) ) : /**
 				switch ( $option['type'] ) {
 
 					case 'text':
+					case 'number':
 					case 'url':
 					case 'select':
 					case 'radio':
@@ -357,6 +358,10 @@ function customizer_library_get_sanitization( $type ) {
 	if ( 'text' == $type || 'textarea' == $type ) {
 		return 'customizer_library_sanitize_text';
 	}
+
+	if ( 'number' == $type ) {
+		return 'customizer_library_sanitize_number_absint';
+	}	
 
 	if ( 'url' == $type ) {
 		return 'esc_url';

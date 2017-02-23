@@ -21,6 +21,72 @@ function customizer_library_sanitize_text( $string ) {
 }
 endif;
 
+if ( ! function_exists( 'customizer_library_sanitize_number_absint' ) ) :
+/**
+ * Number sanitization callback.
+ *
+ * - Sanitization: number_absint
+ * - Control: number
+ * 
+ * Sanitization callback for 'number' type text inputs. This callback sanitizes `$number`
+ * as an absolute integer (whole number, zero or greater).
+ * 
+ * NOTE: absint() can be passed directly as `$wp_customize->add_setting()` 'sanitize_callback'.
+ * It is wrapped in a callback here merely for example purposes.
+ * 
+ * @see absint() https://developer.wordpress.org/reference/functions/absint/
+ *
+ * @param int $number  Number to sanitize.
+ * @param WP_Customize_Setting $setting Setting instance.
+ * @return int Sanitized number; otherwise, the setting default.
+ */
+function customizer_library_sanitize_number_absint( $number, $setting ) {
+	// Ensure $number is an absolute integer (whole number, zero or greater).
+	$number = absint( $number );
+	
+	// If the input is an absolute integer, return it; otherwise, return the default.
+	return ( $number ? $number : $setting->default );
+}
+endif;
+
+if ( ! function_exists( 'customizer_library_sanitize_number_range' ) ) :
+/**
+ * Number Range sanitization callback.
+ *
+ * - Sanitization: number_range
+ * - Control: number, tel
+ * 
+ * Sanitization callback for 'number' or 'tel' type text inputs. This callback sanitizes
+ * `$number` as an absolute integer within a defined min-max range.
+ * 
+ * @see absint() https://developer.wordpress.org/reference/functions/absint/
+ *
+ * @param int $number  Number to check within the numeric range defined by the setting.
+ * @param WP_Customize_Setting $setting Setting instance.
+ * @return int|string The number, if it is zero or greater and falls within the defined range; otherwise, the setting default.
+ */
+function customizer_library_sanitize_number_range( $number, $setting ) {
+	
+	// Ensure input is an absolute integer.
+	$number = absint( $number );
+	
+	// Get the input attributes associated with the setting.
+	$atts = $setting->manager->get_control( $setting->id )->input_attrs;
+	
+	// Get minimum number in the range.
+	$min = ( isset( $atts['min'] ) ? $atts['min'] : $number );
+	
+	// Get maximum number in the range.
+	$max = ( isset( $atts['max'] ) ? $atts['max'] : $number );
+	
+	// Get step.
+	$step = ( isset( $atts['step'] ) ? $atts['step'] : 1 );
+	
+	// If the number is within the valid range, return it; otherwise, return the default.
+	return ( $min <= $number && $number <= $max && is_int( $number / $step ) ? $number : $setting->default );
+}
+endif;
+
 if ( ! function_exists( 'customizer_library_sanitize_checkbox' ) ) :
 /**
  * Sanitize a checkbox to only allow 0 or 1
