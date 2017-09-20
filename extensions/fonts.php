@@ -5446,6 +5446,28 @@ function customizer_library_get_google_fonts() {
 				'latin-ext',
 			),
 		),
+		'Poppins' => array(
+			'label'    => 'Poppins',
+			'variants' => array(
+				'100',
+				'100italic',
+				'300',
+				'300italic',
+				'regular',
+				'italic',
+				'500',
+				'500italic',
+				'700',
+				'700italic',
+				'900',
+				'900italic',
+			),
+			'subsets' => array(
+				'latin',
+				'latin-ext',
+				'devanagari',
+			),
+		),
 		'Port Lligat Sans' => array(
 			'label'    => 'Port Lligat Sans',
 			'variants' => array(
