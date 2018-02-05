@@ -174,7 +174,7 @@ function customizer_library_choose_google_font_variants( $font, $variants = arra
 	// Only add "600" if it exists
 	if ( in_array( '600', $variants ) ) {
 		$chosen_variants[] = '600';
-	}	
+	}
 
 	// Only add "700" if it exists
 	if ( in_array( '700', $variants ) ) {
@@ -4429,6 +4429,7 @@ function customizer_library_get_google_fonts() {
 			'label'    => 'Montserrat',
 			'variants' => array(
 				'regular',
+				'600',
 				'700',
 			),
 			'subsets' => array(
@@ -4439,6 +4440,7 @@ function customizer_library_get_google_fonts() {
 			'label'    => 'Montserrat Alternates',
 			'variants' => array(
 				'regular',
+				'600',
 				'700',
 			),
 			'subsets' => array(
