@@ -45,7 +45,7 @@ function customizer_library_get_font_choices() {
 
 	// Repackage the fonts into value/label pairs
 	foreach ( $fonts as $key => $font ) {
-		$choices[ $key ] = $font['label'];
+		$choices[$key] = $font['label'];
 	}
 
 	return $choices;
