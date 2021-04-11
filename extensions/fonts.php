@@ -108,6 +108,9 @@ function customizer_library_get_google_font_uri( $fonts ) {
 		$request .= urlencode( '&subset=' . join( ',', $subsets ) );
 	}
 
+	// Append the display declaration
+	$request .= '&display=block';
+
 	return esc_url( $request );
 }
 endif;
