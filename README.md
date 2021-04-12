@@ -4,21 +4,21 @@ A helpful library for working with the WordPress customizer.
 
 ## About
 
-The customizer allows WordPress developers to add options for themes and plugins, but it should be easier to work with.  This library abstracts out some of the complexity.
+The customizer allows WordPress developers to add options for themes and plugins, but it should be easier to work with. This library abstracts out some of the complexity.
 
 Instead of adding options to the $wp_customize object directly, developers can just define an array of controls and sections and pass it to the Customizer_Library class.
 
 To see how this works in practice, please see the [Customizer Library Demo](https://github.com/devinsays/customizer-library-demo) theme.
 
-The Customizer Library adds sections, settings and controls to the customizer based on the array that gets passed to it.  There is default sanitization for all options (though you're still welcome to pass a sanitize_callback).  All options are also saved by default as theme_mods (though look for a future update to make this more flexible).
+The Customizer Library adds sections, settings and controls to the customizer based on the array that gets passed to it. There is default sanitization for all options (though you're still welcome to pass a sanitize_callback).  All options are also saved by default as theme_mods (though look for a future update to make this more flexible).
 
 At the moment there is only one custom control (for textarea), but look for additional controls as the library matures.
 
-The Customizer Library includes additional classes and helper functions for creating inline styles and loading Google fonts.  These functions and classes were developed by [The Theme Foundry](https://thethemefoundry.com/) for their theme [Make](https://thethemefoundry.com/wordpress-themes/make/) and I've found them quite useful in my own projects.  However, I'm considering moving them into seperate modules in order to make the core library as focused as possible.  Feedback on this is welcome.
+The Customizer Library includes additional classes and helper functions for creating inline styles and loading Google fonts. These functions and classes were developed by [The Theme Foundry](https://thethemefoundry.com/) for their theme [Make](https://thethemefoundry.com/wordpress-themes/make/) and I've found them quite useful in my own projects. However, I'm considering moving them into seperate modules in order to make the core library as focused as possible. Feedback on this is welcome.
 
 ## Installation
 
-The [Customizer Library](https://github.com/devinsays/customizer-library) can be included in your own projects git submodule if you'd like to be able to pull down changes.  To include it in your own projects the same way, navigate to the directory and use:
+The [Customizer Library](https://github.com/devinsays/customizer-library) can be included in your own projects git submodule if you'd like to be able to pull down changes. To include it in your own projects the same way, navigate to the directory and use:
 
 `git submodule add git@github.com:purothemes/customizer-library.git inc/customizer-library`
 
@@ -344,7 +344,7 @@ if ( $mod ) {
 
 ## Fonts
 
-The Customizer Library has a helper functions to output font stacks and load inline fonts.  This code was also developed by [The Theme Foundry](https://thethemefoundry.com/) for use in [Make](https://thethemefoundry.com/wordpress-themes/make/).  You can see an example of font enqueing in "inc/mods.php":
+The Customizer Library has a helper function to output font stacks and load inline fonts. This code was also developed by [The Theme Foundry](https://thethemefoundry.com/) for use in [Make](https://thethemefoundry.com/wordpress-themes/make/). You can see an example of font enqueing in "inc/mods.php":
 
 ~~~php
 function demo_fonts() {
